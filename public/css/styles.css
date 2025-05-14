@@ -1,0 +1,515 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc; /* Light background */
+}
+
+.header {
+    background-color: #065f46; /* bg-teal-900 */
+    color: white;
+    padding: 24px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* shadow-lg */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    overflow: hidden;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px; 
+    margin: 0;
+}
+
+.title {
+    margin-left: 16px; 
+    font-size: 1.25rem; 
+    font-weight: bold; 
+}
+nav {
+    flex-grow: 1;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    justify-content: center; 
+    padding: 0;
+    margin: 0;
+    gap: 24px; 
+}
+
+.nav-link {
+    position: relative;
+    font-size: 1rem; 
+    color: white; 
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #facc15; /* Hover color */
+}
+
+.nav-link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #facc15; /* Hover underline color */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.language-selector {
+    display: flex;
+    gap: 12px; /* space-x-3 */
+    color: #facc15; /* text-yellow-300 */
+    font-size: 1rem; /* Reduced font size for language options */
+}
+
+.language-selector {
+    display: flex; /* Equivalent to 'flex' */
+}
+
+.language {
+    margin-right: 10px; /* Equivalent to 'space-x-3' (assuming 3 * 4px = 12px) */
+    color: #facc15; /* Equivalent to 'text-yellow-300' */
+    font-size: 1.125rem; /* Equivalent to 'text-lg' (approximately 18px) */
+    cursor: pointer; /* Equivalent to 'cursor-pointer' */
+}
+
+/* Remove margin from the last item to avoid extra space */
+.language-selector .language:last-child {
+    margin-right: 0;
+}
+
+/* Hero Section */
+.main-content {
+    text-align: center; /* Center text */
+    padding: 128px 0; /* py-32 (32 * 4px = 128px) */
+    background-color: #1f2937; /* bg-gray-900 */
+    color: white; /* Text color */
+}
+
+.hero-title {
+    font-size: 2.25rem; /* text-4xl (approximately 36px) */
+    font-weight: bold; /* font-bold */
+    opacity: 0; /* Initial opacity for fade-in effect */
+    animation: fade-in 1s forwards; /* Animation for fade-in */
+}
+
+.hero-description {
+    font-size: 1.25rem; /* text-xl (approximately 20px) */
+    margin-top: 12px; /* mt-3 (3 * 4px = 12px) */
+    opacity: 0; /* Initial opacity for fade-in effect */
+    animation: fade-in 1s forwards 0.2s; /* Animation for fade-in with delay */
+}
+
+.highlight {
+    color: #facc15; /* text-yellow-400 */
+    font-weight: bold; /* font-bold */
+}
+
+.button-container {
+    margin-top: 32px; /* mt-8 (8 * 4px = 32px) */
+    display: flex; /* Flexbox for button alignment */
+    justify-content: center; /* Center buttons */
+    gap: 24px; /* space-x-6 (6 * 4px = 24px) */
+}
+
+.btn {
+    background-color: #065f46;
+    color: white;
+    padding: 20px 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 12px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #047857;
+    transform: scale(1.05);
+}
+/* Fade-in animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Optional: slight upward movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.steps-section {
+    padding: 40px;
+    background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.steps-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.steps-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of cards */
+    justify-content: center; /* Center cards */
+}
+
+.step-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 220px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin: 10px; /* Space between cards */
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Scroll Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.8s ease-in-out forwards;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-600 {
+    animation-delay: 0.6s;
+}
+
+.delay-800 {
+    animation-delay: 0.8s;
+}
+
+/* Scrolling Effect */
+.hidden-content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.visible-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.step-icon {
+    font-size: 3rem; /* Size of the icons */
+    color: #007bff; /* Icon color */
+    margin-bottom: 10px; /* Space between icon and text */
+}
+/* Footer Styles */
+.footer {
+    background-color: #065f46; /* Dark background for the footer */
+    color: white; /* White text color */
+    padding: 40px 20px; /* Padding for the footer */
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links,
+.contact-info,
+.social-media-icons {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+    text-align: left;
+}
+
+.footer-links h4,
+.contact-info h4,
+.social-media-icons h4 {
+    margin-bottom: 15px; /* Increase spacing between title and links */
+    font-size: 1.5rem; /* Larger font size for section titles */
+    font-weight: bold; /* Bold section titles */
+}
+
+.footer-link {
+    color: #facc15;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    color: #e0a800;
+}
+
+.social-media-icons {
+    display: flex;
+    align-items: center; 
+    margin-top: 10px;
+}
+
+.social-icons {
+    display: flex; /* Display social icons horizontally */
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-icon {
+    color: #facc15;
+    font-size: 28px; 
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #e0a800;
+}
+
+.footer-text {
+    font-size: 14px; /* Smaller font size for copyright text */
+    margin-top: 20px; /* Space above copyright text */
+    text-align: center; /* Center the copyright text */
+}
+
+/*Lodge a complain page*/
+/* Overall complaint form container (bigger) */
+.complaint-form {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4;
+    margin: 150px auto 100px auto;
+}
+
+/* Centered form title */
+h1.form-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+
+}
+
+/* Overall form layout in vertical stack */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Each form-group is arranged vertically */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Standard label styling */
+label {
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Standard input, textarea, and select styling */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid green;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+}
+
+/* Textarea adjustments */
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Address group: stack address inputs vertically */
+.address-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.address-group input {
+    width: 100%;
+}
+
+/* display location input and button side-by-side */
+.location-group {
+    display: flex;
+    gap: 10px;
+}
+.location-group input {
+    flex: 1;
+}
+.location-group button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #004d40;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.location-group button:hover {
+    background-color: #00695c;
+}
+
+/* Radio group alignment */
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* General button styling */
+button {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Submit button styling */
+.submit-btn {
+    width: auto;      
+    margin: 0 auto;  
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    background-color: #004d40;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #00695c;
+}
+
+/*Login Page*/
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 150px auto 100px auto;
+  }
+
+  .login-container i {
+    color: #004d40;
+    margin-bottom: 15px;
+  }
+
+  .login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .login-form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 2px solid #004d40;
+    border-radius: 25px; /* Curved input fields */
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+    transition: border-color 0.3s;
+  }
+
+  .login-form input:focus {
+    border-color: #00695c;
+  }
+
+  .login-form button {
+    width: 50%;
+    margin: 0 auto; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px; 
+    background-color: #004d40;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .login-form button:hover {
+    background-color: #00695c;
+  }
+
+  .signup-link {
+    margin-top: 15px;
+  }
+
+  .signup-link a {
+    color: #004d40;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+
+/*Track the Complain page*/
